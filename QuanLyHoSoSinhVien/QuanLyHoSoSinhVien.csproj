@@ -1,0 +1,186 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{DF325FE9-B18B-464C-98CB-C690A0A8FD29}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>QuanLyHoSoSinhVien</RootNamespace>
+    <AssemblyName>QuanLyHoSoSinhVien</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Models\DienGiaDinh.cs" />
+    <Compile Include="Models\KhenThuong.cs" />
+    <Compile Include="Models\Khoa.cs" />
+    <Compile Include="Models\KhoaHoc.cs" />
+    <Compile Include="Models\KyHoc.cs" />
+    <Compile Include="Models\KyLuat.cs" />
+    <Compile Include="Models\Lop.cs" />
+    <Compile Include="Models\QLHSSV.cs" />
+    <Compile Include="Models\SinhVien.cs" />
+    <Compile Include="Models\TaiKhoan.cs" />
+    <Compile Include="Models\ThongTinBo.cs" />
+    <Compile Include="Models\ThongTinMe.cs" />
+    <Compile Include="src\DangNhap\DangNhap.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="src\DangNhap\DangNhap.designer.cs">
+      <DependentUpon>DangNhap.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="src\QuanLyHeThong\TaoTK.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="src\QuanLyHeThong\TaoTK.designer.cs">
+      <DependentUpon>TaoTK.cs</DependentUpon>
+    </Compile>
+    <Compile Include="src\QuanLyHeThong\HeThong.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="src\QuanLyHeThong\HeThong.Designer.cs">
+      <DependentUpon>HeThong.cs</DependentUpon>
+    </Compile>
+    <Compile Include="src\QuanLyHeThong\XoaTK.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="src\QuanLyHeThong\XoaTK.designer.cs">
+      <DependentUpon>XoaTK.cs</DependentUpon>
+    </Compile>
+    <Compile Include="src\QuanLySinhVien\ChiTietSinhVien.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="src\QuanLySinhVien\ChiTietSinhVien.designer.cs">
+      <DependentUpon>ChiTietSinhVien.cs</DependentUpon>
+    </Compile>
+    <Compile Include="src\QuanLySinhVien\DanhSachSinhVien.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="src\QuanLySinhVien\DanhSachSinhVien.Designer.cs">
+      <DependentUpon>DanhSachSinhVien.cs</DependentUpon>
+    </Compile>
+    <Compile Include="src\QuanLySinhVien\QuanLySinhVien.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="src\QuanLySinhVien\QuanLySinhVien.designer.cs">
+      <DependentUpon>QuanLySinhVien.cs</DependentUpon>
+    </Compile>
+    <Compile Include="src\QuanLySinhVien\ThemSinhVien.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="src\QuanLySinhVien\ThemSinhVien.designer.cs">
+      <DependentUpon>ThemSinhVien.cs</DependentUpon>
+    </Compile>
+    <Compile Include="src\TimKiem\TimKiem.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="src\TimKiem\TimKiem.Designer.cs">
+      <DependentUpon>TimKiem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="src\TrangChu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="src\TrangChu.designer.cs">
+      <DependentUpon>TrangChu.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="src\DangNhap\DangNhap.resx">
+      <DependentUpon>DangNhap.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="src\QuanLyHeThong\TaoTK.resx">
+      <DependentUpon>TaoTK.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="src\QuanLyHeThong\HeThong.resx">
+      <DependentUpon>HeThong.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="src\QuanLyHeThong\XoaTK.resx">
+      <DependentUpon>XoaTK.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="src\QuanLySinhVien\ChiTietSinhVien.resx">
+      <DependentUpon>ChiTietSinhVien.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="src\QuanLySinhVien\DanhSachSinhVien.resx">
+      <DependentUpon>DanhSachSinhVien.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="src\QuanLySinhVien\QuanLySinhVien.resx">
+      <DependentUpon>QuanLySinhVien.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="src\QuanLySinhVien\ThemSinhVien.resx">
+      <DependentUpon>ThemSinhVien.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="src\TimKiem\TimKiem.resx">
+      <DependentUpon>TimKiem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="src\TrangChu.resx">
+      <DependentUpon>TrangChu.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
