@@ -32,10 +32,10 @@
             this.xoa_btn = new System.Windows.Forms.Button();
             this.huybo2_btn = new System.Windows.Forms.Button();
             this.danhsach_dg = new System.Windows.Forms.DataGridView();
-            this.label2 = new System.Windows.Forms.Label();
-            this.xtk_txt = new System.Windows.Forms.TextBox();
             this.MaTK = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.UserName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label2 = new System.Windows.Forms.Label();
+            this.xtk_txt = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.danhsach_dg)).BeginInit();
             this.SuspendLayout();
             // 
@@ -54,6 +54,8 @@
             // 
             this.xoa_btn.Font = new System.Drawing.Font("Times New Roman", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.xoa_btn.ForeColor = System.Drawing.Color.Turquoise;
+            this.xoa_btn.Image = global::QuanLyHoSoSinhVien.Properties.Resources.Trash;
+            this.xoa_btn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.xoa_btn.Location = new System.Drawing.Point(34, 283);
             this.xoa_btn.Name = "xoa_btn";
             this.xoa_btn.Size = new System.Drawing.Size(130, 62);
@@ -66,6 +68,8 @@
             // 
             this.huybo2_btn.Font = new System.Drawing.Font("Times New Roman", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.huybo2_btn.ForeColor = System.Drawing.Color.Turquoise;
+            this.huybo2_btn.Image = global::QuanLyHoSoSinhVien.Properties.Resources.Delete;
+            this.huybo2_btn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.huybo2_btn.Location = new System.Drawing.Point(233, 283);
             this.huybo2_btn.Name = "huybo2_btn";
             this.huybo2_btn.Size = new System.Drawing.Size(130, 62);
@@ -89,6 +93,20 @@
             this.danhsach_dg.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.danhsach_dg_CellClick);
             this.danhsach_dg.SelectionChanged += new System.EventHandler(this.danhsach_dg_SelectionChanged);
             // 
+            // MaTK
+            // 
+            this.MaTK.DataPropertyName = "MaTK";
+            this.MaTK.HeaderText = "Mã tài khoản";
+            this.MaTK.Name = "MaTK";
+            this.MaTK.Width = 110;
+            // 
+            // UserName
+            // 
+            this.UserName.DataPropertyName = "UserName";
+            this.UserName.HeaderText = "Tên tài khoản";
+            this.UserName.Name = "UserName";
+            this.UserName.Width = 110;
+            // 
             // label2
             // 
             this.label2.AutoSize = true;
@@ -106,20 +124,6 @@
             this.xtk_txt.Name = "xtk_txt";
             this.xtk_txt.Size = new System.Drawing.Size(201, 23);
             this.xtk_txt.TabIndex = 11;
-            // 
-            // MaTK
-            // 
-            this.MaTK.DataPropertyName = "MaTK";
-            this.MaTK.HeaderText = "Mã tài khoản";
-            this.MaTK.Name = "MaTK";
-            this.MaTK.Width = 110;
-            // 
-            // UserName
-            // 
-            this.UserName.DataPropertyName = "UserName";
-            this.UserName.HeaderText = "Tên tài khoản";
-            this.UserName.Name = "UserName";
-            this.UserName.Width = 110;
             // 
             // XoaTK
             // 

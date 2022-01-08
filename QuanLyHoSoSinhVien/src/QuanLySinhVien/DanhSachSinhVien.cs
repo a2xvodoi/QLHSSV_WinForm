@@ -30,18 +30,25 @@ namespace QuanLyHoSoSinhVien.src.QuanLySinhVien
 
         private void back_btn_Click(object sender, EventArgs e)
         {
-            Hide();
-            QuanLySinhVien quanLySinhVien = new QuanLySinhVien();
-            quanLySinhVien.ShowDialog();
-            Close();
+            if (isFormSearch())
+            {
+                Hide();
+                TrangChu trangChu = new TrangChu();
+                trangChu.ShowDialog();
+                Close();
+            }
+            else
+            {
+                Hide();
+                QuanLySinhVien quanLySinhVien = new QuanLySinhVien();
+                quanLySinhVien.ShowDialog();
+                Close();
+            }
         }
 
         private void DanhSachSinhVien_Load(object sender, EventArgs e)
         {
-            khoiTaoKhoaHoc();
-            khoiTaoLop();
-
-            hienThiDanhSach();
+            switchForm();
         }
 
         private void them_btn_Click(object sender, EventArgs e)
@@ -77,6 +84,7 @@ namespace QuanLyHoSoSinhVien.src.QuanLySinhVien
 
         private void chitiet_btn_Click(object sender, EventArgs e)
         {
+            ChiTietSV chiTietSV;
             var dr = danhsach_dg.CurrentRow;
             if (dr == null)
             {
@@ -86,7 +94,14 @@ namespace QuanLyHoSoSinhVien.src.QuanLySinhVien
             {
                 string maSV = dr.Cells["MaSV"].Value.ToString();
                 Hide();
-                ChiTietSV chiTietSV = new ChiTietSV(maKhoa, maSV);
+                if (isFormSearch())
+                {
+                    chiTietSV = new ChiTietSV(maSV);
+                }
+                else
+                {
+                    chiTietSV = new ChiTietSV(maKhoa, maSV);
+                }
                 chiTietSV.ShowDialog();
                 Close();
             }
@@ -142,10 +157,7 @@ namespace QuanLyHoSoSinhVien.src.QuanLySinhVien
         {
             try
             {
-                string maKhoaHoc = cbKhoaHoc.SelectedValue.ToString().Trim();
-                string maLop = cbLopHoc.SelectedValue.ToString().Trim();
-
-                hienThiDanhSach(maKhoaHoc, maLop);
+                search();
             }
             catch
             {
@@ -157,8 +169,6 @@ namespace QuanLyHoSoSinhVien.src.QuanLySinhVien
         private void hienThiDanhSach()
         {
             var sv = (from s in db.SinhViens
-                      join k in db.Khoas on s.MaKhoa equals k.MaKhoa
-                      where s.MaKhoa == maKhoa
                       select new { s.MaSV, s.TenSV, s.GioiTinh, s.NgaySinh, s.Que, s.QuocTich, s.DienThoai }
                         ).ToList();
             danhsach_dg.DataSource = sv;
@@ -168,12 +178,84 @@ namespace QuanLyHoSoSinhVien.src.QuanLySinhVien
         {
             var sv = (from s in db.SinhViens
                       join k in db.Khoas on s.MaKhoa equals k.MaKhoa
-                      where s.MaKhoa == maKhoa
-                      where s.MaKhoaHoc == maKhoaHoc
-                      where s.MaLop == maLop
+                      where s.MaKhoa == maKhoa && s.MaKhoaHoc == maKhoaHoc && s.MaKhoa == maLop
                       select new { s.MaSV, s.TenSV, s.GioiTinh, s.NgaySinh, s.Que, s.QuocTich, s.DienThoai }
                         ).ToList();
             danhsach_dg.DataSource = sv;
+        }
+
+        private void hienThiDanhSach(string key)
+        {
+            if (isFormSearch())
+            {
+                var sv = (from s in db.SinhViens
+                          where s.MaSV.ToLower().Contains(key.ToLower()) || s.TenSV.ToLower().Contains(key.ToLower())
+                          || s.Que.ToLower().Contains(key.ToLower()) || s.DienThoai.ToLower().Contains(key.ToLower())
+                          select new { s.MaSV, s.TenSV, s.GioiTinh, s.NgaySinh, s.Que, s.QuocTich, s.DienThoai }
+                        ).ToList();
+                danhsach_dg.DataSource = sv;
+            }
+            else
+            {
+                var sv = (from s in db.SinhViens
+                          join k in db.Khoas on s.MaKhoa equals k.MaKhoa
+                          where s.MaKhoa == key
+                          select new { s.MaSV, s.TenSV, s.GioiTinh, s.NgaySinh, s.Que, s.QuocTich, s.DienThoai }
+                        ).ToList();
+                danhsach_dg.DataSource = sv;
+            }
+        }
+
+        private bool isFormSearch()
+        {
+            return string.IsNullOrEmpty(maKhoa);
+        }
+
+        private void switchForm()
+        {
+            if (isFormSearch())
+            {
+                lbKhoa.Visible = false;
+                lbLop.Visible = false;
+                cbKhoaHoc.Visible = false;
+                cbLopHoc.Visible = false;
+                them_btn.Visible = false;
+
+                lbSearch.Visible = true;
+                txtSearch.Visible = true;
+                hienThiDanhSach();
+            }
+            else
+            {
+                lbKhoa.Visible = true;
+                lbLop.Visible = true;
+                cbKhoaHoc.Visible = true;
+                cbLopHoc.Visible = true;
+                them_btn.Visible = true;
+
+                lbSearch.Visible = false;
+                txtSearch.Visible = false;
+
+                khoiTaoKhoaHoc();
+                khoiTaoLop();
+                hienThiDanhSach(maKhoa);
+            }
+        }
+
+        private void search()
+        {
+            if (isFormSearch())
+            {
+                string key = txtSearch.Text;
+                hienThiDanhSach(key);
+            }
+            else
+            {
+                string maKhoaHoc = cbKhoaHoc.SelectedValue.ToString().Trim();
+                string maLop = cbLopHoc.SelectedValue.ToString().Trim();
+
+                hienThiDanhSach(maKhoaHoc, maLop);
+            }
         }
     }
 }

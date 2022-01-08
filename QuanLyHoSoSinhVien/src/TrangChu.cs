@@ -1,4 +1,5 @@
 ﻿using QuanLyHoSoSinhVien.src.QuanLyHeThong;
+using QuanLyHoSoSinhVien.src.QuanLySinhVien;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -46,6 +47,10 @@ namespace QuanLyHoSoSinhVien.src
 
         private void tk_btn_Click(object sender, EventArgs e)
         {
+            Hide();
+            DanhSachSinhVien danhSachSinhVien = new DanhSachSinhVien();
+            danhSachSinhVien.ShowDialog();
+            Close();
         }
 
         private void repost_Click(object sender, EventArgs e)

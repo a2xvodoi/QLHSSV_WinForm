@@ -32,20 +32,26 @@ namespace QuanLyHoSoSinhVien.src.QuanLySinhVien
             InitializeComponent();
             this.maKhoa = maKhoa;
             this.maSV = maSV;
+        }
+        public ChiTietSV(string maSV)
+        {
+            InitializeComponent();
+            this.maSV = maSV;
+        }
+        private void ChiTiet_Load(object sender, EventArgs e)
+        {
             isEdit = false;
             sv = db.SinhViens.FirstOrDefault(s => s.MaSV == maSV);
             dienGiaDinh = db.DienGiaDinhs.FirstOrDefault(s => s.MaSV == maSV);
             thongTinBo = db.ThongTinBoes.FirstOrDefault(s => s.MaSV == maSV);
             thongTinMe = db.ThongTinMes.FirstOrDefault(s => s.MaSV == maSV);
-        }
-        private void ChiTiet_Load(object sender, EventArgs e)
-        {
             setStatusForm();
             loadData();
         }
 
         private void btnBack_Click(object sender, EventArgs e)
         {
+            DanhSachSinhVien danhSachSinhVien;
             if (isEdit)
             {
                 var rs = MessageBox.Show("Dữ liệu chưa được cập nhật bạn có chắc muốn rời khỏi?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
@@ -55,7 +61,14 @@ namespace QuanLyHoSoSinhVien.src.QuanLySinhVien
                 }
             }
             Hide();
-            DanhSachSinhVien danhSachSinhVien = new DanhSachSinhVien(maKhoa);
+            if (string.IsNullOrEmpty(maKhoa))
+            {
+                danhSachSinhVien = new DanhSachSinhVien();
+            }
+            else
+            {
+                danhSachSinhVien = new DanhSachSinhVien(maKhoa);
+            }
             danhSachSinhVien.ShowDialog();
             Close();
         }
@@ -130,11 +143,11 @@ namespace QuanLyHoSoSinhVien.src.QuanLySinhVien
 
         private void khoiTaoLop()
         {
-            cbLopHoc.SelectedText = "";
-            var khoaHoc = cbKhoaHoc.SelectedValue.ToString().Trim();
-            cbLopHoc.DataSource = db.Lops.Where(k => k.MaKhoaHoc == khoaHoc && k.MaKhoa == maKhoa).ToList();
-            cbLopHoc.DisplayMember = "TenLop";
-            cbLopHoc.ValueMember = "MaLop";
+            //cbLopHoc.SelectedText = "";
+            //var khoaHoc = cbKhoaHoc.SelectedValue.ToString().Trim();
+            //cbLopHoc.DataSource = db.Lops.Where(k => k.MaKhoaHoc == khoaHoc && k.MaKhoa == maKhoa).ToList();
+            //cbLopHoc.DisplayMember = "TenLop";
+            //cbLopHoc.ValueMember = "MaLop";
         }
 
         private void loadData()
@@ -174,7 +187,7 @@ namespace QuanLyHoSoSinhVien.src.QuanLySinhVien
 
                 //cbKhoaHoc.SelectedItem = sv.MaKhoaHoc;
                 cbKhoaHoc.SelectedValue = sv.TenSV;
-                string tenLop = db.Lops.FirstOrDefault(l => l.MaKhoaHoc == sv.MaKhoaHoc && l.MaKhoa == maKhoa).TenLop;
+                string tenLop = db.Lops.FirstOrDefault(l => l.MaKhoaHoc == sv.MaKhoaHoc && l.MaKhoa == sv.MaKhoa).TenLop;
                 //cbLopHoc.SelectedItem = sv.MaLop;
                 cbLopHoc.SelectedValue = tenLop;
             }

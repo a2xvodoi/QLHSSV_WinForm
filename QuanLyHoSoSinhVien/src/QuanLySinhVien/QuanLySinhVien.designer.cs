@@ -28,10 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(QuanLySinhVien));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.trvKhoa = new System.Windows.Forms.TreeView();
             this.danhsachtong_dg = new System.Windows.Forms.DataGridView();
             this.MaSV = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TenSV = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -41,12 +41,12 @@
             this.QuocTich = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DienThoai = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label1 = new System.Windows.Forms.Label();
-            this.thoat_btn = new System.Windows.Forms.Button();
             this.back_btn = new System.Windows.Forms.Button();
-            this.trvKhoa = new System.Windows.Forms.TreeView();
+            this.thoat_btn = new System.Windows.Forms.Button();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.danhsachtong_dg)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -61,16 +61,16 @@
             this.panel1.Size = new System.Drawing.Size(220, 580);
             this.panel1.TabIndex = 0;
             // 
-            // pictureBox2
+            // trvKhoa
             // 
-            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(15, 18);
-            this.pictureBox2.Margin = new System.Windows.Forms.Padding(2);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(185, 72);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox2.TabIndex = 6;
-            this.pictureBox2.TabStop = false;
+            this.trvKhoa.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(46)))), ((int)(((byte)(59)))));
+            this.trvKhoa.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.trvKhoa.ForeColor = System.Drawing.Color.White;
+            this.trvKhoa.Location = new System.Drawing.Point(15, 114);
+            this.trvKhoa.Name = "trvKhoa";
+            this.trvKhoa.Size = new System.Drawing.Size(185, 393);
+            this.trvKhoa.TabIndex = 8;
+            this.trvKhoa.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.trvKhoa_AfterSelect);
             // 
             // danhsachtong_dg
             // 
@@ -106,8 +106,8 @@
             // NgaySinh
             // 
             this.NgaySinh.DataPropertyName = "NgaySinh";
-            dataGridViewCellStyle6.Format = "dd/MM/yyyy";
-            this.NgaySinh.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle1.Format = "dd/MM/yyyy";
+            this.NgaySinh.DefaultCellStyle = dataGridViewCellStyle1;
             this.NgaySinh.HeaderText = "Ngày sinh";
             this.NgaySinh.Name = "NgaySinh";
             // 
@@ -150,25 +150,13 @@
             this.label1.TabIndex = 2;
             this.label1.Text = "DANH SÁCH SINH VIÊN";
             // 
-            // thoat_btn
-            // 
-            this.thoat_btn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(46)))), ((int)(((byte)(59)))));
-            this.thoat_btn.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.thoat_btn.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.thoat_btn.Location = new System.Drawing.Point(808, 526);
-            this.thoat_btn.Margin = new System.Windows.Forms.Padding(2);
-            this.thoat_btn.Name = "thoat_btn";
-            this.thoat_btn.Size = new System.Drawing.Size(112, 45);
-            this.thoat_btn.TabIndex = 6;
-            this.thoat_btn.Text = "Thoát";
-            this.thoat_btn.UseVisualStyleBackColor = false;
-            this.thoat_btn.Click += new System.EventHandler(this.thoat_btn_Click);
-            // 
             // back_btn
             // 
             this.back_btn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(46)))), ((int)(((byte)(59)))));
             this.back_btn.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.back_btn.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.back_btn.Image = global::QuanLyHoSoSinhVien.Properties.Resources.Delete;
+            this.back_btn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.back_btn.Location = new System.Drawing.Point(692, 526);
             this.back_btn.Margin = new System.Windows.Forms.Padding(2);
             this.back_btn.Name = "back_btn";
@@ -178,16 +166,32 @@
             this.back_btn.UseVisualStyleBackColor = false;
             this.back_btn.Click += new System.EventHandler(this.back_btn_Click);
             // 
-            // trvKhoa
+            // thoat_btn
             // 
-            this.trvKhoa.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(46)))), ((int)(((byte)(59)))));
-            this.trvKhoa.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.trvKhoa.ForeColor = System.Drawing.Color.White;
-            this.trvKhoa.Location = new System.Drawing.Point(15, 114);
-            this.trvKhoa.Name = "trvKhoa";
-            this.trvKhoa.Size = new System.Drawing.Size(185, 393);
-            this.trvKhoa.TabIndex = 8;
-            this.trvKhoa.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.trvKhoa_AfterSelect);
+            this.thoat_btn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(46)))), ((int)(((byte)(59)))));
+            this.thoat_btn.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.thoat_btn.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.thoat_btn.Image = ((System.Drawing.Image)(resources.GetObject("thoat_btn.Image")));
+            this.thoat_btn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.thoat_btn.Location = new System.Drawing.Point(808, 526);
+            this.thoat_btn.Margin = new System.Windows.Forms.Padding(2);
+            this.thoat_btn.Name = "thoat_btn";
+            this.thoat_btn.Size = new System.Drawing.Size(112, 45);
+            this.thoat_btn.TabIndex = 6;
+            this.thoat_btn.Text = "Thoát";
+            this.thoat_btn.UseVisualStyleBackColor = false;
+            this.thoat_btn.Click += new System.EventHandler(this.thoat_btn_Click);
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
+            this.pictureBox2.Location = new System.Drawing.Point(15, 18);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(185, 72);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox2.TabIndex = 6;
+            this.pictureBox2.TabStop = false;
             // 
             // QuanLySinhVien
             // 
@@ -206,8 +210,8 @@
             this.Text = "Quản lý sinh viên";
             this.Load += new System.EventHandler(this.QuanLySinhVien_Load);
             this.panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.danhsachtong_dg)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

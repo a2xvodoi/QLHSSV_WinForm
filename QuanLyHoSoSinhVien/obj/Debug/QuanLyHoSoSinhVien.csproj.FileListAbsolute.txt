@@ -16,7 +16,6 @@ D:\Documents\QuanLyHoSoSinhVien\QuanLyHoSoSinhVien\obj\Debug\QuanLyHoSoSinhVien.
 D:\Documents\QuanLyHoSoSinhVien\QuanLyHoSoSinhVien\obj\Debug\QuanLyHoSoSinhVien.src.QuanLySinhVien.DanhSachSinhVien.resources
 D:\Documents\QuanLyHoSoSinhVien\QuanLyHoSoSinhVien\obj\Debug\QuanLyHoSoSinhVien.src.QuanLySinhVien.QuanLySinhVien.resources
 D:\Documents\QuanLyHoSoSinhVien\QuanLyHoSoSinhVien\obj\Debug\QuanLyHoSoSinhVien.src.QuanLyHeThong.HeThong.resources
-D:\Documents\QuanLyHoSoSinhVien\QuanLyHoSoSinhVien\obj\Debug\QuanLyHoSoSinhVien.src.TimKiem.TimKiem.resources
 D:\Documents\QuanLyHoSoSinhVien\QuanLyHoSoSinhVien\obj\Debug\QuanLyHoSoSinhVien.src.QuanLyHeThong.TaoTK.resources
 D:\Documents\QuanLyHoSoSinhVien\QuanLyHoSoSinhVien\obj\Debug\QuanLyHoSoSinhVien.src.QuanLyHeThong.XoaTK.resources
 D:\Documents\QuanLyHoSoSinhVien\QuanLyHoSoSinhVien\obj\Debug\QuanLyHoSoSinhVien.src.QuanLySinhVien.ChiTietSV.resources

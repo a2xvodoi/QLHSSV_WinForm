@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DangNhap));
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.tk_txt = new System.Windows.Forms.TextBox();
@@ -44,6 +43,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Location = new System.Drawing.Point(35, 179);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(66, 16);
@@ -53,6 +53,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Location = new System.Drawing.Point(35, 222);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(63, 16);
@@ -77,26 +78,30 @@
             // remember
             // 
             this.remember.AutoSize = true;
+            this.remember.BackColor = System.Drawing.Color.Transparent;
             this.remember.Location = new System.Drawing.Point(190, 247);
             this.remember.Name = "remember";
             this.remember.Size = new System.Drawing.Size(106, 20);
             this.remember.TabIndex = 4;
             this.remember.Text = "Nhớ tài khoản";
-            this.remember.UseVisualStyleBackColor = true;
+            this.remember.UseVisualStyleBackColor = false;
             // 
             // showpass
             // 
             this.showpass.AutoSize = true;
+            this.showpass.BackColor = System.Drawing.Color.Transparent;
             this.showpass.Location = new System.Drawing.Point(190, 276);
             this.showpass.Name = "showpass";
             this.showpass.Size = new System.Drawing.Size(110, 20);
             this.showpass.TabIndex = 5;
             this.showpass.Text = "Hiện mật Khẩu";
-            this.showpass.UseVisualStyleBackColor = true;
+            this.showpass.UseVisualStyleBackColor = false;
             this.showpass.CheckedChanged += new System.EventHandler(this.showpass_CheckedChanged);
             // 
             // dangnhap_btn
             // 
+            this.dangnhap_btn.Image = global::QuanLyHoSoSinhVien.Properties.Resources.admin1;
+            this.dangnhap_btn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.dangnhap_btn.Location = new System.Drawing.Point(39, 305);
             this.dangnhap_btn.Name = "dangnhap_btn";
             this.dangnhap_btn.Size = new System.Drawing.Size(144, 58);
@@ -107,6 +112,8 @@
             // 
             // thoat_btn
             // 
+            this.thoat_btn.Image = global::QuanLyHoSoSinhVien.Properties.Resources.Exit;
+            this.thoat_btn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.thoat_btn.Location = new System.Drawing.Point(215, 305);
             this.thoat_btn.Name = "thoat_btn";
             this.thoat_btn.Size = new System.Drawing.Size(147, 58);
@@ -117,13 +124,13 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.BackgroundImage")));
+            this.pictureBox1.BackgroundImage = global::QuanLyHoSoSinhVien.Properties.Resources.admin2;
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBox1.ErrorImage = null;
             this.pictureBox1.InitialImage = null;
-            this.pictureBox1.Location = new System.Drawing.Point(1, -2);
+            this.pictureBox1.Location = new System.Drawing.Point(12, 12);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(399, 167);
+            this.pictureBox1.Size = new System.Drawing.Size(378, 153);
             this.pictureBox1.TabIndex = 8;
             this.pictureBox1.TabStop = false;
             // 
@@ -133,6 +140,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
+            this.BackgroundImage = global::QuanLyHoSoSinhVien.Properties.Resources.bg_admin;
             this.ClientSize = new System.Drawing.Size(402, 375);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.thoat_btn);
@@ -144,7 +152,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.MaximizeBox = false;
             this.MinimizeBox = false;

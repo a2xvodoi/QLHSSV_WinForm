@@ -66,7 +66,6 @@
             this.label15 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
             this.quaylai_btn = new System.Windows.Forms.Button();
-            this.sua_btn = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.nu_rd = new System.Windows.Forms.RadioButton();
             this.nam_rd = new System.Windows.Forms.RadioButton();
@@ -76,7 +75,6 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.tbls_khong = new System.Windows.Forms.RadioButton();
             this.tbls_co = new System.Windows.Forms.RadioButton();
-            this.luu_btn = new System.Windows.Forms.Button();
             this.quebo_txt = new System.Windows.Forms.TextBox();
             this.label18 = new System.Windows.Forms.Label();
             this.queme_txt = new System.Windows.Forms.TextBox();
@@ -86,6 +84,8 @@
             this.cbKhoaHoc = new System.Windows.Forms.ComboBox();
             this.cbLopHoc = new System.Windows.Forms.ComboBox();
             this.btnBack = new System.Windows.Forms.Button();
+            this.luu_btn = new System.Windows.Forms.Button();
+            this.sua_btn = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -426,17 +426,6 @@
             this.quaylai_btn.Text = "Quay Lại";
             this.quaylai_btn.UseVisualStyleBackColor = false;
             // 
-            // sua_btn
-            // 
-            this.sua_btn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(46)))), ((int)(((byte)(59)))));
-            this.sua_btn.Location = new System.Drawing.Point(1106, 12);
-            this.sua_btn.Name = "sua_btn";
-            this.sua_btn.Size = new System.Drawing.Size(110, 50);
-            this.sua_btn.TabIndex = 66;
-            this.sua_btn.Text = "Sửa";
-            this.sua_btn.UseVisualStyleBackColor = false;
-            this.sua_btn.Click += new System.EventHandler(this.sua_btn_Click);
-            // 
             // panel1
             // 
             this.panel1.Controls.Add(this.nu_rd);
@@ -530,17 +519,6 @@
             this.tbls_co.Text = "Có";
             this.tbls_co.UseVisualStyleBackColor = true;
             // 
-            // luu_btn
-            // 
-            this.luu_btn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(46)))), ((int)(((byte)(59)))));
-            this.luu_btn.Location = new System.Drawing.Point(1106, 99);
-            this.luu_btn.Name = "luu_btn";
-            this.luu_btn.Size = new System.Drawing.Size(110, 50);
-            this.luu_btn.TabIndex = 70;
-            this.luu_btn.Text = "Lưu Thông Tin";
-            this.luu_btn.UseVisualStyleBackColor = false;
-            this.luu_btn.Click += new System.EventHandler(this.luu_btn_Click);
-            // 
             // quebo_txt
             // 
             this.quebo_txt.Location = new System.Drawing.Point(861, 62);
@@ -611,6 +589,8 @@
             // btnBack
             // 
             this.btnBack.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(46)))), ((int)(((byte)(59)))));
+            this.btnBack.Image = global::QuanLyHoSoSinhVien.Properties.Resources.Delete;
+            this.btnBack.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnBack.Location = new System.Drawing.Point(1106, 184);
             this.btnBack.Name = "btnBack";
             this.btnBack.Size = new System.Drawing.Size(110, 50);
@@ -618,6 +598,32 @@
             this.btnBack.Text = "Quay lại";
             this.btnBack.UseVisualStyleBackColor = false;
             this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
+            // 
+            // luu_btn
+            // 
+            this.luu_btn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(46)))), ((int)(((byte)(59)))));
+            this.luu_btn.Image = global::QuanLyHoSoSinhVien.Properties.Resources.Tick;
+            this.luu_btn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.luu_btn.Location = new System.Drawing.Point(1106, 99);
+            this.luu_btn.Name = "luu_btn";
+            this.luu_btn.Size = new System.Drawing.Size(110, 50);
+            this.luu_btn.TabIndex = 70;
+            this.luu_btn.Text = "Cập nhật";
+            this.luu_btn.UseVisualStyleBackColor = false;
+            this.luu_btn.Click += new System.EventHandler(this.luu_btn_Click);
+            // 
+            // sua_btn
+            // 
+            this.sua_btn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(46)))), ((int)(((byte)(59)))));
+            this.sua_btn.Image = global::QuanLyHoSoSinhVien.Properties.Resources.Edit;
+            this.sua_btn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.sua_btn.Location = new System.Drawing.Point(1106, 12);
+            this.sua_btn.Name = "sua_btn";
+            this.sua_btn.Size = new System.Drawing.Size(110, 50);
+            this.sua_btn.TabIndex = 66;
+            this.sua_btn.Text = "Sửa";
+            this.sua_btn.UseVisualStyleBackColor = false;
+            this.sua_btn.Click += new System.EventHandler(this.sua_btn_Click);
             // 
             // ChiTietSV
             // 

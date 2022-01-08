@@ -32,11 +32,11 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.tao_btn = new System.Windows.Forms.Button();
-            this.huy_btn = new System.Windows.Forms.Button();
             this.ttk_txt = new System.Windows.Forms.TextBox();
             this.mk2_txt = new System.Windows.Forms.TextBox();
             this.remk2_txt = new System.Windows.Forms.TextBox();
+            this.huy_btn = new System.Windows.Forms.Button();
+            this.tao_btn = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -83,30 +83,6 @@
             this.label4.TabIndex = 3;
             this.label4.Text = "Nhập lại mật khẩu";
             // 
-            // tao_btn
-            // 
-            this.tao_btn.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tao_btn.ForeColor = System.Drawing.Color.LightSeaGreen;
-            this.tao_btn.Location = new System.Drawing.Point(89, 295);
-            this.tao_btn.Name = "tao_btn";
-            this.tao_btn.Size = new System.Drawing.Size(166, 61);
-            this.tao_btn.TabIndex = 4;
-            this.tao_btn.Text = "Tạo tài khoản";
-            this.tao_btn.UseVisualStyleBackColor = true;
-            this.tao_btn.Click += new System.EventHandler(this.tao_btn_Click);
-            // 
-            // huy_btn
-            // 
-            this.huy_btn.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.huy_btn.ForeColor = System.Drawing.Color.LightSeaGreen;
-            this.huy_btn.Location = new System.Drawing.Point(377, 295);
-            this.huy_btn.Name = "huy_btn";
-            this.huy_btn.Size = new System.Drawing.Size(167, 61);
-            this.huy_btn.TabIndex = 5;
-            this.huy_btn.Text = "Hủy bỏ";
-            this.huy_btn.UseVisualStyleBackColor = true;
-            this.huy_btn.Click += new System.EventHandler(this.huy_btn_Click);
-            // 
             // ttk_txt
             // 
             this.ttk_txt.Location = new System.Drawing.Point(244, 90);
@@ -130,7 +106,35 @@
             this.remk2_txt.TabIndex = 8;
             this.remk2_txt.UseSystemPasswordChar = true;
             // 
-            // CreatAcc
+            // huy_btn
+            // 
+            this.huy_btn.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.huy_btn.ForeColor = System.Drawing.Color.LightSeaGreen;
+            this.huy_btn.Image = global::QuanLyHoSoSinhVien.Properties.Resources.Delete;
+            this.huy_btn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.huy_btn.Location = new System.Drawing.Point(377, 295);
+            this.huy_btn.Name = "huy_btn";
+            this.huy_btn.Size = new System.Drawing.Size(167, 61);
+            this.huy_btn.TabIndex = 5;
+            this.huy_btn.Text = "Hủy bỏ";
+            this.huy_btn.UseVisualStyleBackColor = true;
+            this.huy_btn.Click += new System.EventHandler(this.huy_btn_Click);
+            // 
+            // tao_btn
+            // 
+            this.tao_btn.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tao_btn.ForeColor = System.Drawing.Color.LightSeaGreen;
+            this.tao_btn.Image = global::QuanLyHoSoSinhVien.Properties.Resources.Add;
+            this.tao_btn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.tao_btn.Location = new System.Drawing.Point(89, 295);
+            this.tao_btn.Name = "tao_btn";
+            this.tao_btn.Size = new System.Drawing.Size(166, 61);
+            this.tao_btn.TabIndex = 4;
+            this.tao_btn.Text = "Tạo tài khoản";
+            this.tao_btn.UseVisualStyleBackColor = true;
+            this.tao_btn.Click += new System.EventHandler(this.tao_btn_Click);
+            // 
+            // TaoTK
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -150,7 +154,7 @@
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "CreatAcc";
+            this.Name = "TaoTK";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Tạo tài khoản";
             this.ResumeLayout(false);
